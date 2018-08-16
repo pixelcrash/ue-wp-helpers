@@ -75,7 +75,11 @@ function size_column_register($columns) {
 
 add_action('manage_media_custom_column', 'size_column_display', 10, 2);
 function size_column_display($column_name, $post_id) {
+    $type  = "";
     if( 'dimensions' != $column_name || !wp_attachment_is_image($post_id)) return;
     list($url, $width, $height) = wp_get_attachment_image_src($post_id, 'full');
-    echo esc_html("ID: {$post_id} / {$width}&times;{$height}");
+    if($width > $height): $type = "Landscape"; endif;
+    if($width < $height): $type = "Portrait"; endif;
+    if($width == $height): $type = "Square"; endif;
+    echo esc_html("ID: {$post_id} / {$width}&times;{$height} - {$type}");
 }
