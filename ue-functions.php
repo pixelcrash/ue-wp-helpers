@@ -63,3 +63,19 @@ add_theme_support( 'post-thumbnails' );
 
 // Hide Admin bar
 add_filter('show_admin_bar', '__return_false');
+
+
+// #admin #helper #media
+// Show the image size in the media list dashboard page
+add_filter('manage_upload_columns', 'size_column_register');
+function size_column_register($columns) {
+    $columns['dimensions'] = 'Dimensions';
+    return $columns;
+}
+
+add_action('manage_media_custom_column', 'size_column_display', 10, 2);
+function size_column_display($column_name, $post_id) {
+    if( 'dimensions' != $column_name || !wp_attachment_is_image($post_id)) return;
+    list($url, $width, $height) = wp_get_attachment_image_src($post_id, 'full');
+    echo esc_html("{$width}&times;{$height}");
+}
