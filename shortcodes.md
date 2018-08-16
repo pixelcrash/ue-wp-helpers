@@ -1,11 +1,9 @@
 Collection of Shorcodes for fast page layouts
 
-#[txt] 
-Attributes:
-- style
-Content
-- p
-- h4
+# [txt] 
+_Attributes:_
+- $style + integer
+- Content: p, h1, h2, h3, h4
 
 [txt]<h4></h4><p></p>[txt]
 
