@@ -77,5 +77,5 @@ add_action('manage_media_custom_column', 'size_column_display', 10, 2);
 function size_column_display($column_name, $post_id) {
     if( 'dimensions' != $column_name || !wp_attachment_is_image($post_id)) return;
     list($url, $width, $height) = wp_get_attachment_image_src($post_id, 'full');
-    echo esc_html("{$width}&times;{$height}");
+    echo esc_html("ID: {$post_id} / {$width}&times;{$height}");
 }
