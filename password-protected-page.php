@@ -2,7 +2,7 @@
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
     // DOING THE LOOP
 
-    <?php  if ( !post_password_required() ); ?>
+    <?php  if ( !post_password_required() ): ?>
       // PUT EVERYTHING PROTECTED IN HERE
 
     <?php else:
