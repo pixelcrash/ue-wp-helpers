@@ -10,8 +10,4 @@
 
 // HERE GOES LOOP DATA
 
-<?php
-  endwhile;
-  endif;
-  wp_reset_postdata();
-?>
+<?php endwhile; endif; wp_reset_postdata(); ?>
