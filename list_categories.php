@@ -3,12 +3,13 @@ if( ! function_exists('ue_list_categories')){
       
       $arr['class'] = ($arr['class']) ? $arr['class']  :  ''; 
       $all = ($arr['all']) ? 1  :  0; 
+      $allid = ($arr['all']) ? $arr['all']  :  get_option( 'page_on_front' );
       $cats = "";
     
       if($all): 
-        $cats .= "<li><a href='".get_the_permalink($arr['allid'])."' class='current-cat'>All</li>"; 
+        $cats .= "<li><a href='".get_the_permalink($allid)."' class='current-cat'>All</li>"; 
       else:
-        $cats .= "<li><a href='".get_the_permalink($arr['allid'])."' class=''>All</li>";
+        $cats .= "<li><a href='".get_the_permalink($allid)."' class=''>All</li>";
       endif;
       
       if($arr['parents']):
