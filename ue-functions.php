@@ -10,11 +10,14 @@ function ue_footer_scripts(){ ?>
 
 // #debug #helper
 // A better var_dump with layout -> makes debuggin cleaner
-function var_dump_pre($value){
-  echo "<pre>";
-  var_dump($value);
-  echo "</pre>";
+if( ! function_exists('pre_dump'){
+    function  pre_dump($value){
+    echo "<pre>";
+    var_dump($value);
+    echo "</pre>";
+  }
 }
+
 
 // #contactform7 #forms 
 // Display a contactform7 inside php 
