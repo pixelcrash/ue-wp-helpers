@@ -23,3 +23,11 @@ define('DB_NAME', $db_name);
 define('DB_USER', $username);
 define('DB_PASSWORD', $password);
 define('DB_HOST', $hostname);
+
+// ADD FTP UPLOAD INFO
+define('FS_METHOD', 'ftpext');
+define('FTP_BASE', '/var/www/vhosts/chriscoyier.net/httpdocs/');
+define('FTP_USER', 'username');
+define('FTP_PASS', 'password');
+define('FTP_HOST', 'host');
+define('FTP_SSL', false);
