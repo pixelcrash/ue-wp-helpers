@@ -19,8 +19,8 @@ function prefix_nav_menu_classes($items, $menu, $args) {
 // HOW TO USE
 
 $menu_items = get_nav_by_location('locationname');
-
+if($menu_items):
 foreach($menu_items as $item):
   echo $item->ID . " " . $item->url . " " . $item->title . " " . $item->current . "<hr>";
 endforeach;
-
+endif;
