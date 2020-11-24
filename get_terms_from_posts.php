@@ -23,9 +23,13 @@ if(! function_exists('ue_get_terms_from_posts')){
         if($terms):
           foreach($terms as $singleterm):
             //term_id, slug, name
-            if(! array_key_exists($singleterm->term_id, $search_array)):
+            if(! array_key_exists($singleterm->term_id, $output_terms)):
+              $output_terms[$singleterm->term_id]['count'] = 1;
+              $output_terms[$singleterm->term_id]['term_id'] = $singleterm->term_id;
               $output_terms[$singleterm->term_id]['slug'] = $singleterm->slug;
               $output_terms[$singleterm->term_id]['name'] = $singleterm->name;
+            else:
+              $output_terms[$singleterm->term_id]['count'] = $output_terms[$singleterm->term_id]['count'] + 1;
             endif;
           
           endforeach;
