@@ -6,12 +6,11 @@
   
   foreach($terms as $term): 
   
-  $posts = get_posts([
-  "post_type" => "stockist", 
-  'tax_query' => array(
-    'taxonomy' => 'country',
-    'field' => 'id',
-    'terms' => $term->term_id
+  $posts = get_posts(["post_type" => "stockist", 'tax_query' => 
+  array(
+      array('taxonomy' => 'country',
+      'field' => 'term_id',
+      'terms' => $term->term_id)
     )]);
   
     if($posts):
