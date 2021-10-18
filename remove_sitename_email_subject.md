@@ -13,3 +13,5 @@ function email_subject_remove_sitename($email) {
 
 
 found via https://newbedev.com/wp-mail-remove-sitename-from-email-subject
+
+Also works with well-handled and wpforms SMTP 
