@@ -14,4 +14,17 @@ update_post_meta( $new_id, '_yoast_wpseo_twitter-title', 'title' );
 update_post_meta( $new_id, '_yoast_wpseo_twitter-description', 'description' );
 update_post_meta( $new_id, '_yoast_wpseo_twitter-image', 'image url with http: or https: ' );
 
+
+// Overwrite on Output
+// more here https://developer.yoast.com/
+
+add_filter('wpseo_title', 'filter_product_wpseo_title');
+function filter_product_wpseo_title($title) {
+    if(  is_singular( 'product') ) {
+        $title = //your code
+    }
+    return $title;
+}
+
+
 ?>
