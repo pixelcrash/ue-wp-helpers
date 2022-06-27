@@ -24,3 +24,24 @@ foreach($menu_items as $item):
   echo $item->ID . " " . $item->url . " " . $item->title . " " . $item->current . "<hr>";
 endforeach;
 endif;
+
+
+// UPDATE 
+// is working now also with classe, current item 
+
+<?php
+  // Name of the Menu
+  $menu_items = get_nav_by_location('main');
+?>
+			
+<ul class="uk-navbar-nav">
+  <?php if($menu_items): ?>
+    <?php foreach($menu_items as $item): ?>
+      <li class="<?=$item->current; ?>">
+        <a href="<?=$item->url; ?>" class=" stretch 
+          <?php echo implode(" ", $item->classes); ?>" id="menu-<?=$item->ID;?>" title="<?=$item->description; ?>"><?=$item->title; ?>
+        </a>
+      </li>
+    <?php endforeach; ?>
+  <?php endif; ?>
+</ul>
